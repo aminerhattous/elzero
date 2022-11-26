@@ -65,7 +65,7 @@ a {
 .nav__bar {
   display: flex;
   justify-content: space-between;
-  border:2px solid red;
+  /* border:2px solid red; */
   position: relative;
 }
 /* ? Logo */
@@ -120,18 +120,21 @@ a {
   }
   .nav__link a {
     padding: 15px 6px;
-    font-size: 1.1rem;
+    font-size: .875rem;
   }
 }
 /*? Inner Menu */
 .inner__links {
   border-bottom: 3px solid var(--clr-blue-200);
+  background-color: #fff;
   position: absolute;
   width: 100%;
   right: 0;
   top: 100%;
   gap: 20px;
   display: none;
+  padding: 10px 0;
+  z-index: 1;
 }
 .link__image {
   max-width: 100%;
@@ -198,5 +201,86 @@ a {
   .inner__links {
     flex-direction: column;
   } 
+}
+/* * hero */
+.hero {
+  background-color: var(--clr-white-400);
+  display: flex;
+  height: calc(100vh - 84px);
+  clip-path: polygon( 0 0,100% 0,100% 80%,0% 100%);
+  
+}
+.hero__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.hero__arrow {
+  color: var(--clr-blue-200);
+  font-weight: 800;
+  position: absolute;
+  bottom: 11%;
+  left: 50%;
+  animation: down 1s infinite alternate cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+/* ? arrow animation */
+@keyframes down {
+  to {
+    translate: 0px -20px;
+  }
+}
+.hero__title {
+  font-size: 3.5rem;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.hero__description {
+  font-size: 1.5rem;
+}
+.hero__image {
+  width: 600px;
+}
+.hero__image img {
+  max-width: 100%;
+  animation:bounce 3s infinite linear alternate;
+}
+/* ? Hero image animation */
+@keyframes bounce {
+  to {
+    translate:0px -80px;
+  }
+}
+@media screen and (max-width:992px) {
+  .hero {
+    clip-path: polygon( 0 0,100% 0,100% 80%,0% 100%);
+  }
+  .hero__container {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  .hero__description {
+    font-size: 1rem;
+  }
+
+  .hero__image {
+    display: none;
+  }
+}
+@media screen and (max-width:768px) {
+  .hero {
+    height: calc(100vh - 112.89px);
+  }
+  .hero__title {
+    font-size: 2.1rem;
+  }
+  .hero__description {
+    font-size: .875rem;
+  }
+
 }
 /*! Header End */
