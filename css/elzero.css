@@ -248,7 +248,6 @@ img {
   width: 600px;
 }
 .hero__image img {
-  max-width: 100%;
   animation:bounce 3s infinite linear alternate;
 }
 /* ? Hero image animation */
@@ -731,6 +730,7 @@ img {
 /*! Team Members Start */
 .teammembers {
   padding: var(--sections-padding);
+  position: relative;
 }
 .team__cards {
   display: grid;
@@ -851,6 +851,25 @@ img {
   background: #fff;
   box-shadow: var(--main-shadow);
   padding-top: 30px;
+  position: relative;
+  transition: transform .3s;
+}
+.services__card::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background-color: var(--clr-blue-100);
+  transition:width .3s,left .3s;
+}
+.services__card:hover::before {
+  left: 0;
+  width: 100%;
+}
+.services__card:hover {
+  transform: translateY(-14px);
 }
 .services__intro {
   text-align: center;
@@ -873,6 +892,7 @@ img {
   justify-content: space-between;
   align-items: center;
   margin: 0;
+  overflow: hidden;
 }
 .services__number {
   background: var(--clr-blue-100);
@@ -888,10 +908,10 @@ img {
 .services__number::after {
   content: "";
     position: absolute;
-    top: 0;
+    top: -2px;
     right: -35%;
     width: 70%;
-    height: 100%;
+    height: calc(100% + 4px);
     background: #D5D5D5;
     clip-path: polygon(35% 0,100% 0,60% 100%,0 100%);
 }
@@ -906,3 +926,142 @@ img {
   text-decoration: none;
 }
 /*! Services End */
+/*! Our skills Start */
+.skills {
+  padding: var(--sections-padding);
+}
+.skills__content {
+  display: flex;
+  align-items: center;
+}
+.skills__image {
+  flex: 1;
+}
+@media screen and (max-width:768px) {
+  .skills__image {
+    display: none;
+  }
+}
+.skills__bars {
+  flex:1.2;
+}
+.bar__title {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.skills__progress {
+  background: var(--clr-white-500);
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+.skills__progress::after {
+  color: var(--clr-blue-100);
+  border: 1px solid var(--clr-white-600);
+  font-weight: 800;
+  font-size: 0.875rem;
+  text-align: center;
+  position: absolute;
+  top: -40px;
+  right: 0;
+  padding: 3px 6px;
+  border-radius: 6px;
+}
+.bar-one::after,.bar-four::after {
+  content:"80%";
+}
+.bar-two::after {
+  content:"75%";
+}
+.bar-three::after {
+  content:"85%";
+}
+.progress-value {
+  background: var(--clr-blue-100);
+  display: inline-block;
+  height: 100%;
+}
+.value-one {
+  width: 80%;
+}
+.value-two {
+  width: 85%;
+}
+.value-three {
+  width: 70%;
+}
+.value-four {
+  width: 80%;
+}
+/*! Our skills End */
+/* ! how it work  Start */
+.how {
+  background: var(--clr-white-500);  
+  padding: var(--sections-padding);
+}
+.how__content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+@media screen and (max-width:991px) {
+  .how__content {
+    flex-direction: column;
+  }
+}
+.how__image {
+  flex: 1;
+}
+.how__cards {
+  flex: 1;
+  display: grid;
+  gap: 40px;
+}
+.how__card {
+  background: var(--clr-white-400);
+  border: 2px solid var(--clr-white-300);
+  border-radius: 12px;
+  padding: 20px ;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (max-width:425px) {
+  .how__card {
+    flex-direction: column;
+  }
+}
+.how__card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--clr-white-500);
+  transition: .3s;
+}
+.how__card:hover::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.how__intro {
+  flex: 1;
+}
+.how__title {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.how__logo {
+  width: 64px;
+}
+/* ! how it work  End */
