@@ -1498,6 +1498,15 @@ img {
   width: 100vw;
   height: 100%;
   z-index: -2;
+  animation: change-background 10s linear infinite alternate;
+}
+@keyframes change-background {
+  from {
+    background: url(.././imgs/discount-background1.jpg);
+  }
+  to {
+    background: url(.././imgs/discount-background2.jpg);
+  }
 }
 .white-title,
 .discount__description {
