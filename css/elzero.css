@@ -1550,6 +1550,10 @@ img {
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
+  transition: background-color .3s;
+}
+.contact__form [type="submit"]:hover {
+  background-color: var(--clr-blue-200);
 }
 /* ! contact End */
 /* ! footer Start */
@@ -1581,10 +1585,16 @@ img {
   height: 60px;
   justify-content: center;
   align-items: center;
-  transition: color .3s;
+  transition: background .3s;
 }
-.social__link:hover{
-  color: var(--clr-blue-100);
+.social__link:last-of-type:hover {
+  background-color: #ff0000;
+}
+.social__link:nth-of-type(2):hover {
+  background-color: #1da1f2;
+}
+.social__link:first-of-type:hover{
+  background-color: var(--clr-blue-200);
 }
 .footer__description {
   color: var(--clr-white-500);
@@ -1592,6 +1602,10 @@ img {
 .footer__link {
   padding: 20px 20px 20px 0px;
   position: relative;
+  transition: padding-left .3s;
+}
+.footer__link:hover {
+  padding-left: 10px;
 }
 .footer__link:not(:first-of-type) {
   border-top: 1px solid var(--clr-dark-gray);
