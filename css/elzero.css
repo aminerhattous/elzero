@@ -1,6 +1,7 @@
 /* Basic Setup */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 *,
 *::before,
@@ -481,12 +482,13 @@ img {
   grid-template-columns: repeat(auto-fill, minmax(325px,1fr));
   gap: 40px;
   justify-items: center;
+  justify-content: center;
+  
 }
 @media screen and (max-width:425px) {
   .gallery__cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px,300px));
-    
     gap: 40px;
   }
   .gallery__card {
